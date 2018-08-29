@@ -3,8 +3,10 @@ package com.pskwiercz.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQuery(name = "find_all_courses", query = "select c from Course c")
 public class Course {
 
     @Id
