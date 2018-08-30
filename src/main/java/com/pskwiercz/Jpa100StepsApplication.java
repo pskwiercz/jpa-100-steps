@@ -24,15 +24,6 @@ public class Jpa100StepsApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        courseRepo.save(new Course("Course 1"));
-        courseRepo.save(new Course("Course 2"));
-
-        courseRepo.findAll().stream().forEach(x -> log.info(x.toString()));
-
-        log.info("Find by id: " + courseRepo.findById(2L));
-
-        courseRepo.removeById(1L);
-
         courseRepo.findAll().stream().forEach(x -> log.info(x.toString()));
     }
 }
