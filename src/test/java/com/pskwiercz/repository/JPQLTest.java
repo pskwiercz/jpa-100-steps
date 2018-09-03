@@ -36,7 +36,7 @@ public class JPQLTest {
 
     @Test
     public void whereTest() {
-        TypedQuery<Course> query = em.createQuery("select c from Course c where name like '%updated'", Course.class);
+        TypedQuery<Course> query = em.createNamedQuery("find_updated_courses", Course.class);
         List<Course> courses = query.getResultList();
         courses.stream().forEach(System.out::println);
 
