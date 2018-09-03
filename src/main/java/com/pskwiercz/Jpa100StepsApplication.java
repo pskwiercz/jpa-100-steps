@@ -1,6 +1,5 @@
 package com.pskwiercz;
 
-import com.pskwiercz.entity.Course;
 import com.pskwiercz.repository.CourseRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +22,7 @@ public class Jpa100StepsApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
+        courseRepo.playWithEntityManager();
         courseRepo.findAll().stream().forEach(x -> log.info(x.toString()));
     }
 }

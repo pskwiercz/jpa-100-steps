@@ -33,4 +33,16 @@ public class CourseRepositoryTest {
         course = repo.findById(10002L);
         assertNull(course);
     }
+
+    @Test
+    public void saveTest() {
+        Course course = repo.findById(10003L);
+        assertEquals("Spring in 50 steps", course.getName());
+
+        course.setName("Spring in 50 steps - updated");
+        repo.save(course);
+
+        Course course1 = repo.findById(10003L);
+        assertEquals("Spring in 50 steps - updated", course1.getName());
+    }
 }

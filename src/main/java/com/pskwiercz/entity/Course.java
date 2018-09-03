@@ -16,7 +16,12 @@ public class Course {
     private String name;
 
 
-    public Course() {}
+    public  Course() {}
+
+    public Course(long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public Course(String name) {
         this.name = name;
