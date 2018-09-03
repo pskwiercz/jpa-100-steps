@@ -15,7 +15,6 @@ public class Course {
 
     private String name;
 
-
     public  Course() {}
 
     public Course(long id, String name) {
