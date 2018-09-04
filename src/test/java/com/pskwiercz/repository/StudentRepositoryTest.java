@@ -52,5 +52,17 @@ public class StudentRepositoryTest {
         assertNotNull(student);
         assertEquals("Ranga", student.getName());
         log.info("=========" + student.toString());
+        log.info("=========" + student.getPassport().toString());
     }
+
+    @Test
+    @Transactional
+    public void retrivePassportWithStudent() {
+        Passport passport = em.find(Passport.class,4002L);
+        assertNotNull(passport);
+        assertEquals("Adam", passport.getStudent().getName());
+        log.info("=========" + passport.toString());
+        log.info("=========" + passport.getStudent().toString());
+    }
+
 }
